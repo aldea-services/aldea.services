@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Welding & Paint Coating - Transform Your Property</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-black: #0a0a0a;
+            --primary-gold: #d4af37;
+            --accent-gold: #f4d03f;
+            --white: #ffffff;
+            --off-white: #f8f8f8;
+            --gray: #666666;
+            --light-gray: #e5e5e5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            color: var(--primary-black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: var(--primary-black);
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            opacity: 0.25;
+            filter: grayscale(20%);
+        }
+
+        .hero-background::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(10, 10, 10, 0.85) 0%, 
+                rgba(10, 10, 10, 0.75) 50%, 
+                rgba(212, 175, 55, 0.15) 100%);
+        }
+
+        .bg-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: fadeInImage 1.5s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        .bg-img:nth-child(1) { animation-delay: 0.1s; }
+        .bg-img:nth-child(2) { animation-delay: 0.15s; }
+        .bg-img:nth-child(3) { animation-delay: 0.2s; }
+        .bg-img:nth-child(4) { animation-delay: 0.25s; }
+        .bg-img:nth-child(5) { animation-delay: 0.3s; }
+        .bg-img:nth-child(6) { animation-delay: 0.35s; }
+        .bg-img:nth-child(7) { animation-delay: 0.4s; }
+        .bg-img:nth-child(8) { animation-delay: 0.45s; }
+        .bg-img:nth-child(9) { animation-delay: 0.5s; }
+        .bg-img:nth-child(10) { animation-delay: 0.55s; }
+        .bg-img:nth-child(11) { animation-delay: 0.6s; }
+        .bg-img:nth-child(12) { animation-delay: 0.65s; }
+
+        @keyframes fadeInImage {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 1200px;
+            padding: 2rem;
+            animation: slideUp 1s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            color: var(--white);
+            letter-spacing: 2px;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero h1 .gold-text {
+            color: var(--primary-gold);
+            display: block;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: var(--off-white);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            width: 100%;
+            max-width: 100%;
+            padding: 1.5rem 3rem;
+            background: linear-gradient(135deg, var(--primary-gold) 0%, var(--accent-gold) 100%);
+            color: var(--primary-black);
+            text-decoration: none;
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            text-align: center;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            color: var(--primary-black);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--off-white);
+            padding: 2.5rem;
+            border-left: 4px solid var(--primary-gold);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateX(10px);
+            box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-black);
+            letter-spacing: 1px;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* Why Choose Us */
+        .why-us {
+            padding: 6rem 2rem;
+            background: var(--primary-black);
+            color: var(--white);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .benefit-item {
+            text-align: center;
+        }
+
+        .benefit-number {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 4rem;
+            color: var(--primary-gold);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .benefit-item p {
+            color: var(--light-gray);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: var(--off-white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 5rem;
+            color: var(--primary-gold);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary-black);
+        }
+
+        .testimonial-role {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--primary-gold);
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+        }
+
+        .contact-item a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-gold);
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary-black) 0%, #1a1a1a 100%);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: clamp(2rem, 5vw, 4rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .final-cta p {
+            color: var(--light-gray);
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Desktop Optimizations */
+        @media (min-width: 768px) {
+            .cta-button {
+                max-width: 600px;
+            }
+
+            .hero-background {
+                grid-template-columns: repeat(10, 1fr);
+                grid-template-rows: repeat(5, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .cta-button {
+                max-width: 550px;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section - Above the Fold -->
+    <section class="hero">
+        <div class="hero-background">
+            <!-- Replace these placeholder images with actual photos of beautiful Philippine houses -->
+            <img class="bg-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400" alt="House 1">
+            <img class="bg-img" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400" alt="House 2">
+            <img class="bg-img" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400" alt="House 3">
+            <img class="bg-img" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400" alt="House 4">
+            <img class="bg-img" src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=400" alt="House 5">
+            <img class="bg-img" src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=400" alt="House 6">
+            <img class="bg-img" src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?w=400" alt="House 7">
+            <img class="bg-img" src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=400" alt="House 8">
+            <img class="bg-img" src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=400" alt="House 9">
+            <img class="bg-img" src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=400" alt="House 10">
+            <img class="bg-img" src="https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=400" alt="House 11">
+            <img class="bg-img" src="https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=400" alt="House 12">
+        </div>
+        
+        <div class="hero-content">
+            <h1>
+                Premium Welding & Paint Coating
+                <span class="gold-text">That Lasts a Lifetime</span>
+            </h1>
+            <p class="hero-subtitle">
+                Transform your property with expert welding fabrication and industrial-grade paint coating. 
+                We deliver structural integrity and stunning finishes that protect your investment for decades.
+            </p>
+            <a href="#contact" class="cta-button">Book Estimate Inquiry →</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2 class="section-title">Our Expertise</h2>
+        <p class="section-subtitle">Professional craftsmanship backed by years of experience</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Welding Fabrication</h3>
+                <p>
+                    Custom metal fabrication for gates, railings, structural supports, and ornamental designs. 
+                    We handle residential and commercial projects with precision welding techniques.
+                </p>
+            </div>
+            
+            <div class="service-card">
+                <h3>Industrial Paint Coating</h3>
+                <p>
+                    High-performance protective coatings that resist corrosion, weathering, and wear. 
+                    From powder coating to specialized finishes, we ensure lasting beauty and protection.
+                </p>
+            </div>
+            
+            <div class="service-card">
+                <h3>Metal Restoration</h3>
+                <p>
+                    Restore and refurbish existing metalwork with professional surface preparation, 
+                    rust removal, and premium coating systems that extend the life of your structures.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-us">
+        <h2 class="section-title" style="color: var(--white);">Why Property Owners Choose Us</h2>
+        <p class="section-subtitle" style="color: var(--light-gray);">Proven results that speak for themselves</p>
+        
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <div class="benefit-number">15+</div>
+                <h4>Years Experience</h4>
+                <p>Trusted by hundreds of satisfied clients across the Philippines</p>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-number">100%</div>
+                <h4>Quality Guarantee</h4>
+                <p>Every project backed by our commitment to excellence</p>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-number">24/7</div>
+                <h4>Support Available</h4>
+                <p>Responsive service from estimate to completion</p>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-number">500+</div>
+                <h4>Projects Completed</h4>
+                <p>Residential and commercial installations nationwide</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2 class="section-title">Client Success Stories</h2>
+        <p class="section-subtitle">Real results from real property owners</p>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    [Add client testimonial here - describe the quality of work, professionalism, 
+                    and how the welding/coating improved their property]
+                </p>
+                <div class="testimonial-author">Client Name</div>
+                <div class="testimonial-role">Location/Property Type</div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    [Add client testimonial here - focus on reliability, attention to detail, 
+                    and long-lasting results]
+                </p>
+                <div class="testimonial-author">Client Name</div>
+                <div class="testimonial-role">Location/Property Type</div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    [Add client testimonial here - highlight transformation, value for money, 
+                    and professional service]
+                </p>
+                <div class="testimonial-author">Client Name</div>
+                <div class="testimonial-role">Location/Property Type</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Get Your Free Estimate</h2>
+        <p class="section-subtitle">Contact us today to discuss your project requirements</p>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Reach Out Today</h3>
+                <div class="contact-item">
+                    <strong>Phone</strong>
+                    <a href="tel:+639123456789">+63 912 345 6789</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <a href="mailto:info@yourweldingbusiness.ph">info@yourweldingbusiness.ph</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Office Hours</strong>
+                    Monday - Saturday: 8:00 AM - 6:00 PM
+                </div>
+                <div class="contact-item">
+                    <strong>Service Areas</strong>
+                    Metro Manila & Surrounding Provinces
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <h3>What Happens Next?</h3>
+                <p style="color: var(--gray); line-height: 1.8;">
+                    1. <strong>Contact Us</strong> - Reach out via phone or email<br>
+                    2. <strong>Site Visit</strong> - We assess your project requirements<br>
+                    3. <strong>Detailed Quote</strong> - Receive a comprehensive estimate<br>
+                    4. <strong>Expert Execution</strong> - Professional installation and finishing<br>
+                    5. <strong>Quality Assurance</strong> - Final inspection and guarantee
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <h2>Ready to Transform Your Property?</h2>
+        <p>Join hundreds of satisfied clients who trust us with their welding and coating needs</p>
+        <a href="#contact" class="cta-button">Book Estimate Inquiry →</a>
+    </section>
+</body>
+  </html>
+  
